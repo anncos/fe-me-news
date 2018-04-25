@@ -6,7 +6,7 @@ class App extends Component {
     return (
       <Page>
         <Header />
-          <Content />
+        <Content />
         <Footer />
       </Page>
     );
