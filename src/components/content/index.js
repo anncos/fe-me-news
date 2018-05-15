@@ -1,7 +1,6 @@
 import React from 'react';
-import { NewsItem } from '../news-item';
-export const Content = ({ id }) => (
+export const Content = ({ children }) => (
   <div>
-    <NewsItem id={id} />
+    { children }
   </div>
 )
