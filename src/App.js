@@ -13,7 +13,7 @@ class App extends Component {
                 <Content>
                   <Switch>
                     <Route exact path="/" render={() => <NewsItemList ids={api.getItemsIds()} />} />
-                    <Route path="/item/:itemId" render={({match}) => <NewsItem id={[]} />} />
+                    <Route path="/item/:itemId" render={({match}) => <NewsItem id={match.params.itemId} />} />
                   </Switch>
                 </Content>
               </div>
