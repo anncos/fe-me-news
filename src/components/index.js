@@ -5,3 +5,4 @@ export * from './footer';
 export * from './menu';
 export * from './news-item';
 export * from './news-item-list';
+export * from './page-news-list';
