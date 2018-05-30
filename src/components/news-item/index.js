@@ -1,23 +1,18 @@
 import React, { Component } from 'react';
 import { distanceInWordsToNow } from 'date-fns';
 import { api } from '../../utils';
+import { connect } from 'react-redux';
 import { Link } from 'react-router-dom';
 import './styles.css';
 
+import * as actions from '../../actions';
+
 export class NewsItem extends Component {
-  constructor(props) {
-    super(props);
-    
-    this.state = { item: undefined };
-  }
-  
   componentDidMount() {
-    api.getItem(this.props.id)
-      .then(item => { this.setState({ item })})
-      .catch(err => { console.error(err)});
+    this.props.fetchItem(this.props.id);
   }
   render(){
-    const { item } = this.state;
+    const { item } = this.props;
     if (!item) {
       return <div>Loading…</div>
     }
@@ -35,3 +30,15 @@ export class NewsItem extends Component {
 
   }
 }
+
+const mapStateToProps = (state, ownProps) => {
+  return {
+    item: (state.data.items[ownProps.id] || {}).item
+  }
+}
+
+const mapDispatchToProps = {
+    fetchItem: actions.fetchItem,
+}
+
+export default connect(mapStateToProps, mapDispatchToProps)(NewsItem);
