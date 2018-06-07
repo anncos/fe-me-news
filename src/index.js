@@ -13,7 +13,6 @@ import * as ducks from "./ducks";
 // ducks.ui.reducer = { ui: rawReducer };
 
 const rootReducer = combineReducers({
-  ui: uiReducer,
   data: dataReducer,
   ...ducks.ui.reducer
 });
