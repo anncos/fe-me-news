@@ -7,6 +7,7 @@ import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
 import * as ducks from "./ducks";
+import { logger } from "./utils";
 
 // ducks.ui.reducer = { ui: rawReducer };
 
@@ -21,7 +22,7 @@ const composeEnhancers =
     ? window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__({})
     : compose;
 const enhancer = composeEnhancers(
-  applyMiddleware(thunk)
+  applyMiddleware(thunk, logger)
   // other store enhancers if any
 );
 const store = createStore(rootReducer, enhancer);
