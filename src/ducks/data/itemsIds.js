@@ -41,7 +41,7 @@ const fetchItemsIds = () => {
   return dispatch => {
     dispatch(requestItemsIdsStart());
     return api
-      .getItemIds()
+      .getItemsIds()
       .then(itemsIds => {
         dispatch(requestItemsIdsSuccess(itemsIds));
       })
