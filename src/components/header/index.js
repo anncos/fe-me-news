@@ -3,7 +3,6 @@ import { Link } from "react-router-dom";
 import { connect } from "react-redux";
 import { Menu } from "../";
 import "./styles.css";
-import * as actions from "../../actions";
 import * as ducks from "../../ducks";
 
 const mainMenu = [
