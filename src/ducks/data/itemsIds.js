@@ -1,5 +1,3 @@
-import { api } from "../../utils";
-
 const ns = "itemsIds";
 
 const shape = {};

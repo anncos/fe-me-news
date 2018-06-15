@@ -4,8 +4,6 @@ import { connect } from "react-redux";
 
 import { NewsItemList } from "../";
 
-import { api } from "../../utils";
-
 import * as ducks from "../../ducks";
 
 const isArraysEqual = (arr1 = [], arr2 = []) =>

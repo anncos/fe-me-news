@@ -7,7 +7,7 @@ import { createStore, applyMiddleware, compose, combineReducers } from "redux";
 import thunk from "redux-thunk";
 import { Provider } from "react-redux";
 import * as ducks from "./ducks";
-import { logger, reduxFetch } from "./utils";
+import { reduxFetch } from "./utils";
 
 // ducks.ui.reducer = { ui: rawReducer };
 

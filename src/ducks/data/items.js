@@ -1,5 +1,3 @@
-import { api } from "../../utils";
-
 const ns = "items";
 
 const shape = {};
@@ -18,19 +16,6 @@ const selectors = {
 const types = {
   fetchItem: "REQUEST_ITEM"
 };
-
-const requestItemStart = id => ({
-  type: types.start,
-  payload: id
-});
-const requestItemSuccess = itemObj => ({
-  type: types.success,
-  payload: itemObj
-});
-const requestItemFail = (id, err) => ({
-  type: types.fail,
-  payload: { id, err }
-});
 
 const fetchItem = id => ({
   type: types.fetchItem,
